@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Animation</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="base">
+        <div class="signup-switch">
+          <div class="button-text">
+            <button class="btn" id="sign-up" type="button" name="button">Sign Up</button>
+          </div>
+        </div>
+        <div style="display:none" class="signin-switch">
+          <div class="button-text">
+            <button class="btn"  id="sign-in" type="button" name="button">Sign In</button>
+          </div>
+        </div>
+        <div class="slider">
+          <div class="form">
+            <div style="display:none" class="signup-form" id="login" class="col-xs-12 col-md-4 col-md-offset-4 child card">
+              <label for="login" style="color:white">Email Address</label>
+              <input id="username" placeholder="Email Address" class="form-control"/><br/>
+              <label for="password">Password</label>
+              <input id="password" type="password" style="width: 100%;" placeholder="Password" class="form-control"/><br/>
+              <button onclick="loginController.signinDb()" class="login-button btn">Log In With Email</button>
+            </div>
+            <div class="signin-form" class="col-xs-12 col-md-4 col-md-offset-4 child card">
+              <label for="">Email Address</label>
+              <input id="username" style="width: 100%;" placeholder="Email Address" class="form-control"/><br/>
+              <label for="" style="color:white">Password</label>
+              <input id="password" type="password" style="width: 100%;" placeholder="Password" class="form-control"/><br/>
+              <button onclick="loginController.signinDb()" style="padding: 7.5px; width: 100%; color: #64CBB6; background-color: white" class="login-button btn">Log In With Email</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/signin-animation.js" charset="utf-8"></script>
+  </body>
+</html>
