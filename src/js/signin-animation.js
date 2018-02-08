@@ -62,7 +62,7 @@ const loginDisplayController =  {
           loginDisplayController.$.slider.animate({
             height: loginDisplayController.css.slider.height,
             top: loginDisplayController.css.slider.top
-          }, 500, function() {
+          }, 300, "linear", function() {
             next()
           })
         } else {
@@ -73,23 +73,28 @@ const loginDisplayController =  {
         loginDisplayController.$.slider
           .animate({
             left
-          }, 500, function() {
+          }, 200, function() {
             next()
           })
+          // .animate({
+          //   marginLeft: 20
+          // }, 100, function() {
+          //   next()
+          // })
       })
       .queue(function(next) {
         if (left < 0) {
           loginDisplayController.$.slider.animate({
-            height: "200%",
-            top: "-50%"
-          }, 500, function() {
+            height: "210%",
+            top: "-55%"
+          }, 300, "linear", function() {
             next()
           })
         } else {
           next()
         }
       })
-      .delay(500)
+      .delay(300)
       .queue(function() {
         $switch2
           .add($form2)
@@ -97,8 +102,8 @@ const loginDisplayController =  {
         $switch2.dequeue()
         $form2.dequeue()
       })
-  }
 
+  }
 }
 
 loginDisplayController.init()

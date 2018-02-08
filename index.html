@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="/css/login.css">
   </head>
   <body>
@@ -17,29 +17,102 @@
       <div class="base">
         <div class="signup-switch">
           <div class="button-text">
-            <button class="btn" id="sign-up" type="button" name="button">Sign Up</button>
+            <h2 class="login-heading">Welcome to <span class="primary-color">Jamie<strong>Ai</strong></span>
+              <p class="login-sub">Register new account</p>
+              <button id="sign-up" class="switch-button btn">Sign Up</button>
+            </h2>
           </div>
         </div>
         <div style="display:none" class="signin-switch">
           <div class="button-text">
-            <button class="btn"  id="sign-in" type="button" name="button">Sign In</button>
+            <h2 class="login-heading">Welcome to <span class="primary-color">Jamie<strong>Ai</strong></span>
+              <p class="login-sub">Already have an account?</p>
+              <button id="sign-in" class="switch-button btn">Login</button>
+            </h2>
           </div>
         </div>
         <div class="slider">
           <div class="form">
             <div style="display:none" class="signup-form" id="login" class="col-xs-12 col-md-4 col-md-offset-4 child card">
-              <label for="login" style="color:white">Email Address</label>
-              <input id="username" placeholder="Email Address" class="form-control"/><br/>
-              <label for="password">Password</label>
-              <input id="password" type="password" style="width: 100%;" placeholder="Password" class="form-control"/><br/>
-              <button onclick="loginController.signinDb()" class="login-button btn">Log In With Email</button>
+              <div class="col-xs-12"><br/>
+                <h2 class="form-head primary-color">SIGN UP</h2>
+                <label for="">Full Name</label>
+                <input style="width: 100%;", id="fullname" class="form-input"/><br/>
+                <label for="">Email Address</label>
+                <input style="width: 100%;", id="emailaddress" class="form-input"/><br/><br/>
+                <label for="" style="padding-bottom: 10px;">What types of roles are you interested in?</label>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Data Analyst" name="consideredRoles" class="consideredRoles"/>Data Analyst
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Data Scientist" name="consideredRoles" class="consideredRoles"/>Data Scientist
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Machine Learning Engineer" name="consideredRoles" class="consideredRoles"/>Machine Learning Engineer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="NLP Engineer" name="consideredRoles" class="consideredRoles"/>NLP Engineer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Python Developer" name="consideredRoles" class="consideredRoles"/>Python Developer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Java Developer" name="consideredRoles" class="consideredRoles"/>Java Developer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="DevOps" name="consideredRoles" class="consideredRoles"/>DevOps
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Data Architect" name="consideredRoles" class="consideredRoles"/>Data Architect
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Big Data Engineer" name="consideredRoles" class="consideredRoles"/>Big Data Engineer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="Data Protection Officer" name="consideredRoles" class="consideredRoles"/>Data Protection Officer
+                  </label>
+                </div>
+                <div class="col-xs-12">
+                  <label>
+                    <input type="checkbox" value="BI Analyst" name="consideredRoles" class="consideredRoles"/>Data BI Analyst
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-12"><br/>
+                <label for="">Password</label>
+                <input type="password" style="width: 100%;", id="pword1" class="form-input"/><br/>
+                <label for="">Confirm Password</label>
+                <input type="password" style="width: 100%;", id="pwordconfirm" class="form-input"/><br/>
+                <button style="padding: 7.5px; width: 100%; color: #64CBB6; background-color: white" id="signupbtn" class="login-button btn">Sign Up</button>
+              </div>
             </div>
             <div class="signin-form" class="col-xs-12 col-md-4 col-md-offset-4 child card">
+              <h2 style="margin-bottom: 30px;" class="form-head primary-color">LOGIN</h2>
               <label for="">Email Address</label>
-              <input id="username" style="width: 100%;" placeholder="Email Address" class="form-control"/><br/>
-              <label for="" style="color:white">Password</label>
-              <input id="password" type="password" style="width: 100%;" placeholder="Password" class="form-control"/><br/>
-              <button onclick="loginController.signinDb()" style="padding: 7.5px; width: 100%; color: #64CBB6; background-color: white" class="login-button btn">Log In With Email</button>
+              <input id="username", class="form-input"/><br/>
+              <label for="">Password</label>
+              <input id="password" type="password" style="width: 100%;", class="form-input"/><br/>
+              <button onclick="loginController.signinDb()" class="login-button btn">Log In</button>
+              <button class="login-button btn">Forgot Password</button>
             </div>
           </div>
         </div>

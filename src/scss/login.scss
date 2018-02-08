@@ -1,6 +1,8 @@
 $login-width: 800px;
 $login-height: 400px;
 
+$primary-color: rgb(100, 203, 182);
+
 @function center($value1, $value2) {
   @return $value1 / $value2;
 };
@@ -20,8 +22,9 @@ $login-height: 400px;
   left: calc(50% - #{center($login-width, 2)});
   width: $login-width;
   height: $login-height;
-  background: rgba(100, 203, 182, 0.65);
-  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  // border-radius: 20px;
 }
 
 .slider {
@@ -33,6 +36,7 @@ $login-height: 400px;
   width: $slider-width;
   height: $slider-height;
   background: white;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
 
   .form {
     height: 100%;
@@ -68,9 +72,118 @@ $login-height: 400px;
 }
 
 .signin-form, .signup-form {
-  position: inherit;
-  top: 0px;
-  left: 0px;
   background-color: white;
-  padding: 40px;
+  padding: 5%;
+}
+
+.signin-form {
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.signup-form {
+  top: 0;
+  left: 0;
+}
+
+.form-input {
+  font-family: 'Open Sans' !important;
+  font-weight: 400;
+  display: block;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px #ccc solid !important;
+  height: 34px;
+  padding: 6px 0 0 0;
+  transition:
+    border-color ease-in-out .15s,
+    box-shadow ease-in-out .15s;
+  width: 100%;
+  border-color: none !important;
+}
+
+.form-input:focus {
+  border-bottom: 1px #555 solid !important;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Open Sans' !important;
+  font-weight: 400;
+  color: grey;
+}
+
+input:focus {
+    outline:none;
+}
+
+.login-button {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: transparent;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 200;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: all .1s ease-in-out;
+  margin: 0 0;
+  padding: 0.9rem 2rem;
+  border-color: $primary-color;
+  padding: 7.5px;
+  width: 100%;
+  color: $primary-color;
+  background-color: white;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.login-heading, .login-sub {
+  color: #fff;
+}
+
+.login-sub {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.login-heading {
+  font-weight: 200;
+  margin-left: 50px;
+  text-align: left;
+}
+
+.form-head {
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.switch-button {
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 0;
+  color: white;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.switch-button:hover, .switch-button:active {
+  color: $primary-color;
+  border-color: $primary-color;
+}
+
+.switch-button:active, .switch-button:focus {
+  outline: 0 !important;
+}
+
+.primary-color {
+  color: $primary-color;
 }
