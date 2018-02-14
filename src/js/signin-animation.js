@@ -54,21 +54,9 @@ const loginDisplayController =  {
   },
 
   startAnimation: function(left, $switch1, $form1, $switch2, $form2) {
+    $form1.fadeOut(400)
     $switch1
-      .add($form1)
       .fadeOut(400)
-      .queue(function(next) {
-        if (left > 0) {
-          loginDisplayController.$.slider.animate({
-            height: loginDisplayController.css.slider.height,
-            top: loginDisplayController.css.slider.top
-          }, 300, "linear", function() {
-            next()
-          })
-        } else {
-          next()
-        }
-      })
       .queue(function(next) {
         loginDisplayController.$.slider
           .animate({
@@ -83,25 +71,25 @@ const loginDisplayController =  {
           // })
       })
       .queue(function(next) {
+        $switch2
+          .fadeIn(400)
+          .dequeue()
         if (left < 0) {
-          loginDisplayController.$.slider.animate({
-            height: "210%",
-            top: "-55%"
-          }, 300, "linear", function() {
-            next()
-          })
+          loginDisplayController.$.slider.css('height', "180%")
+          loginDisplayController.$.slider.css('top', "-40%")
         } else {
-          next()
+          loginDisplayController.$.slider.css('height', loginDisplayController.css.slider.height)
+          loginDisplayController.$.slider.css('top', loginDisplayController.css.slider.top)
         }
+        next()
       })
       .delay(300)
       .queue(function() {
-        $switch2
-          .add($form2)
+        $form2
           .fadeIn(400)
-        $switch2.dequeue()
-        $form2.dequeue()
+          .dequeue()
       })
+
 
   }
 }

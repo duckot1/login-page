@@ -1,4 +1,4 @@
-$login-width: 800px;
+$login-width: 850px;
 $login-height: 400px;
 
 $primary-color: rgb(100, 203, 182);
@@ -7,12 +7,16 @@ $primary-color: rgb(100, 203, 182);
   @return $value1 / $value2;
 };
 
+body {
+  height: 100vh;
+}
+
 .main {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url(https://employers.jamieai.com/images/playstation-pattern.png);
 }
 
@@ -37,6 +41,8 @@ $primary-color: rgb(100, 203, 182);
   height: $slider-height;
   background: white;
   box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  z-index: 100;
+  transition: all 0.5s;
 
   .form {
     height: 100%;
@@ -142,6 +148,24 @@ input:focus {
   margin-bottom: 10px;
 }
 
+.radio-col {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+
+  div {
+    padding: 0;
+
+    label {
+      font-size: 11px;
+    }
+  }
+}
+
+.radio-col:last-of-type {
+  padding-left: 15px;
+}
+
 .login-heading, .login-sub {
   color: #fff;
 }
@@ -160,7 +184,7 @@ input:focus {
 
 .form-head {
   font-weight: 200;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
